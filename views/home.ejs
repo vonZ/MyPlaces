@@ -12,17 +12,13 @@
 
   <section class="wrapper col-md-12">
 
-    <span class="alert boxItem toggle" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+
+    <span ng-click="isPostFormOpen = !isPostFormOpen" class="boxItem pointer noPadding col-md-4">
       <i class="fa fa-plus-circle"></i>
-      Lägg till ett nytt inlägg
+      Lägg till ett nytt ställe
     </span>
-
-
-    <!--<div class="arrow_box edit" id="AddPost"></div>-->
-
-
-    <div class="collapse postForm" id="collapseExample">
-      <form ng-submit="addPost()">
+    <div ng-init="isPostFormOpen = false" ng-show="isPostFormOpen" class="alert boxItem">
+      <form ng-submit="addPost()" class="col-md-12">
         <div class="form-group">
           <label for="exampleInputTitle">Titel</label>
           <input type="text" class="form-control" autofocus placeholder="Titel" required ng-model="title" required ></input>
@@ -37,14 +33,16 @@
           </select>
         </div>
         <div class="boxContainer col-md-6 boxRow">
-          <a ng-click="isUpoloadFormOpen = !isUpoloadFormOpen" class="col-md-4 boxItem pointer noPadding">
+          <span ng-click="isUpoloadFormOpen = !isUpoloadFormOpen" class="col-md-4 boxItem pointer noPadding">
+            <i class="fa fa-picture-o"></i>
             Lägg till en bild
-          </a>
+          </span>
         </div>
         <div class="boxContainer col-md-6 boxRow" data-ng-click="initMap()">
-          <a ng-click="isPlaceFormOpen = !isPlaceFormOpen" class="col-md-4 boxItem pointer noPadding" >
+          <span ng-click="isPlaceFormOpen = !isPlaceFormOpen" class="col-md-4 boxItem pointer noPadding" >
+            <i class="fa fa-map-marker"></i>
             Lägg till plats
-          </a>
+          </span>
         </div>
         <div ng-init="isUpoloadFormOpen = false" ng-show="isUpoloadFormOpen">
            <input type="file" ng-model="file" name="file" base-sixty-four-input required onload="onLoad" maxsize="500" accept="image/*">
@@ -85,7 +83,7 @@
       </section>
     
     </section>
-  </div>
+    </div>
 
   <div id="class" ng-repeat="marker in markers">
      <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
@@ -93,7 +91,7 @@
 
   <hr />
 
-  <section class="cardHandler">
+  <div class="cardHandler">
     <ul>
       <span class="col-md-12 twoButton">
         <div ng-click="show=!show" class="boxItem">
@@ -108,7 +106,7 @@
         </div>
       </span>
     </ul>
-  </section>
+  </div>
 
   <div ng-class="{hidden:show}">
     <section class="col-md-12">
@@ -141,7 +139,14 @@
                   <span class="placeType"></span>
                 </div>
                 <h3>{{post.title}}</h3>
-                <p class="label">{{post.searchPlaceName}}</p>
+                <p class="label">
+                  <i class="fa fa-map-marker"></i>
+                  {{post.searchPlaceName}}
+                </p>
+                <p class="label">
+                  <i class="fa fa-clock-o"></i>
+                  {{post.createdAt}}
+                </p>
               </div>
               <div class="postMainBodyContent">
                 <p class="desc"> {{post.description}}</p>

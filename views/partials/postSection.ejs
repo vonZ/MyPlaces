@@ -1,0 +1,98 @@
+<section class="cardHandler">
+    <ul>
+      <span class="col-md-12 twoButton">
+        <div ng-click="show=!show" class="boxItem">
+          <div ng-class="{hidden:!show}" data-ng-click="initOnSwitch()">
+            <i class="fa fa-globe"></i>
+            <span>Visa karta</span>
+          </div>
+          <div ng-class="{hidden:show}">
+            <i class="fa fa-list"></i>
+            <span>Visa kort</span>
+          </div>
+        </div>
+      </span>
+    </ul>
+  </section>
+
+  <div ng-class="{hidden:show}">
+    <section class="col-md-12">
+      <div id="mapOverview"></div>
+    </section>
+  </div>
+
+  <div ng-class="{hidden:!show}">
+
+    <section class="col-md-12">
+
+      <section class="postSection">
+
+        <div ng-repeat="post in posts | orderBy: '-id'" class="postContainer">
+
+          <div class="{{post.category}} post col-md-12">
+
+            <div class="postImageSection" ng-show="post.image">
+              <img ng-src="{{'data:image/png;base64,'+post.image}}" >
+            </div>
+
+            <div class="postMainBody">
+
+              <div class="postMainBodyHeader">
+                <div class="col-md-4 noPadding">
+                  <span class="placeType"></span>
+                </div>
+                <h3>{{post.title}}</h3>
+                <p class="label">{{post.searchPlaceName}}</p>
+              </div>
+              <div class="postMainBodyContent">
+                <p class="desc"> {{post.description}}</p>
+              </div>
+
+            </div>
+            
+            <hr class="footerDivider">
+            <div class="postFooter">   
+
+              <a ng-click="incrementUpvotes(post)" class="col-md-4 upvote pointer noPadding">
+                {{post.upvotes}} röster
+              </a>
+
+              <a ng-click="isCommentFormOpen = !isCommentFormOpen" class="pointer noPadding col-md-4">
+                Kommentera
+              </a>
+
+              <a ng-click="isEditFormOpen = !isEditFormOpen" class="col-md-4 pointer noPadding">
+                Redigera
+              </a>
+
+            </div>
+
+           <div class="arrow_box comment" ng-show="isCommentFormOpen"></div>
+           <div class="arrow_box edit" ng-show="isEditFormOpen"></div>
+
+
+          </div>
+          <div ng-init="isEditFormOpen = false" ng-show="isEditFormOpen" class="editForm">
+              <span class="pointer col-md-4 noPadding col-md-12">
+                <div ng-click="deletePost(post)" class="col-md-6 one-two delete">
+                  <i class="fa fa-trash"></i>
+                  <span>Radera</span>
+                </div>
+                <div class="col-md-6 one-two submit">
+                  <i class="fa fa-pencil"></i>
+                  <span>Redigera</span>
+                </div>
+              </span>
+          </div>
+
+          <div ng-init="isCommentFormOpen = false" ng-show="isCommentFormOpen" class="editForm">
+              <span class="pointer col-md-4 noPadding col-md-12">
+                <div class="col-md-12">
+                  Kommentera
+                </div>
+              </span>
+          </div>
+      </div>
+    </section>
+
+  </section>

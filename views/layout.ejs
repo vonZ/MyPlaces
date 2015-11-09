@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <title>My places</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/importer.css">
+    <!--STYLES END-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+  </head>
+
+ <body ng-app="myApp" ng-controller="postCtrl">
+    <%- body %>
+
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/dist/dependencies.min.js"></script>
+    <script src="/dist/app.nomin.js"></script>
+    <!--SCRIPTS END-->
+
+    <script src="//maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+  </body>
+</html>

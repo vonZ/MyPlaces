@@ -19,6 +19,7 @@ app.controller('postCtrl', ['$scope', 'posts', 'Map', '$timeout', '$location' , 
 	$scope.onLoad = function (e, reader, file, fileList, fileOjects, fileObj) {
 		console.log("fileList: ", fileList); 			
 		$scope.base64 = fileObj.base64;   		
+		$(".boxContainer label").addClass("added"); 
 		//console.log("fileObj.base64: ", fileObj.base64);
 	};
 

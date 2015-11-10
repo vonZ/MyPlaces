@@ -19,6 +19,7 @@ app.factory('Map', ['$q', function($q){
         this.places.textSearch({query: str}, function(results, status) {
             if (status == 'OK') {
                 d.resolve(results[0]);
+                $(".boxContainer span").addClass("added"); 
             }
             else d.reject(status);
         });

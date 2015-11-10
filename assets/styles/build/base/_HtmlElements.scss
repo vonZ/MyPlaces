@@ -39,6 +39,7 @@
 .boxContainer {
     width: 50%;
     float: left;
+    padding: 0px 15px;
 
     &.col-md-6 {
         &:last-child {
@@ -48,14 +49,6 @@
 }
 
 .boxRow {
-    &:first-child {
-        padding: 0px 10px 0px 0px; 
-    }
-
-    &:last-child {
-        padding: 0px 0px 0px 10px; 
-    }
-
     & .boxItem {
         float: left;
         text-align: center;
@@ -73,9 +66,32 @@
     border-radius: 0px; 
     margin-bottom: 10px; 
 
+    &.added {
+        background-color: #17395F;
+        color: white;
+
+        & i {
+            color: white;
+        }
+    }
+
     & form {
         padding: 0px; 
         text-align: left; 
+
+        & input[type="file"] {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+
+        & label {
+            font-weight: normal;
+            padding-bottom: 12px;
+        }
     }
 }
 

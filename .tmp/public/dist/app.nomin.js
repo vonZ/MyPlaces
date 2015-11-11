@@ -16,6 +16,7 @@ app.controller("postCtrl", [ "$scope", "posts", "Map", "$timeout", "$location", 
     a.onLoad = function(b, c, d, e, f, g) {
         console.log("fileList: ", e);
         a.base64 = g.base64;
+        $(".boxContainer label").addClass("added");
     };
     a.files = [];
     a.getCategories();
@@ -178,6 +179,7 @@ app.factory("Map", [ "$q", function(a) {
         }, function(a, b) {
             if (b == "OK") {
                 c.resolve(a[0]);
+                $(".boxContainer span").addClass("added");
             } else c.reject(b);
         });
         return c.promise;

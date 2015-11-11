@@ -5905,14 +5905,11 @@ body {
 
 .boxContainer {
   width: 50%;
-  float: left; }
+  float: left;
+  padding: 0px 15px; }
   .boxContainer.col-md-6:last-child {
     padding-left: 10px; }
 
-.boxRow:first-child {
-  padding: 0px 10px 0px 0px; }
-.boxRow:last-child {
-  padding: 0px 0px 0px 10px; }
 .boxRow .boxItem {
   float: left;
   text-align: center;
@@ -5927,9 +5924,24 @@ body {
   display: inline-block;
   border-radius: 0px;
   margin-bottom: 10px; }
+  .boxItem.added {
+    background-color: #17395F;
+    color: white; }
+    .boxItem.added i {
+      color: white; }
   .boxItem form {
     padding: 0px;
     text-align: left; }
+    .boxItem form input[type="file"] {
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1; }
+    .boxItem form label {
+      font-weight: normal;
+      padding-bottom: 12px; }
 
 .angular-google-map-container {
   height: 400px; }
@@ -6247,14 +6259,11 @@ body {
 
 .boxContainer {
   width: 50%;
-  float: left; }
+  float: left;
+  padding: 0px 15px; }
   .boxContainer.col-md-6:last-child {
     padding-left: 10px; }
 
-.boxRow:first-child {
-  padding: 0px 10px 0px 0px; }
-.boxRow:last-child {
-  padding: 0px 0px 0px 10px; }
 .boxRow .boxItem {
   float: left;
   text-align: center;
@@ -6269,9 +6278,24 @@ body {
   display: inline-block;
   border-radius: 0px;
   margin-bottom: 10px; }
+  .boxItem.added {
+    background-color: #17395F;
+    color: white; }
+    .boxItem.added i {
+      color: white; }
   .boxItem form {
     padding: 0px;
     text-align: left; }
+    .boxItem form input[type="file"] {
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1; }
+    .boxItem form label {
+      font-weight: normal;
+      padding-bottom: 12px; }
 
 .angular-google-map-container {
   height: 400px; }

@@ -33,10 +33,11 @@
           </select>
         </div>
         <div class="boxContainer col-md-6 boxRow">
-          <span ng-click="isUpoloadFormOpen = !isUpoloadFormOpen" class="col-md-4 boxItem pointer noPadding">
+          <input type="file" ng-model="file" name="file" base-sixty-four-input required onload="onLoad" maxsize="500" accept="image/*" id="file">
+          <label for="file" class="col-md-4 boxItem pointer">
             <i class="fa fa-picture-o"></i>
             Lägg till en bild
-          </span>
+          </label>
         </div>
         <div class="boxContainer col-md-6 boxRow" data-ng-click="initMap()">
           <span ng-click="isPlaceFormOpen = !isPlaceFormOpen" class="col-md-4 boxItem pointer noPadding" >
@@ -44,11 +45,16 @@
             Lägg till plats
           </span>
         </div>
-        <div ng-init="isUpoloadFormOpen = false" ng-show="isUpoloadFormOpen">
+
+        <!-- isUpoloadFormOpen -->
+        <!--<div ng-init="isUpoloadFormOpen = false" ng-show="isUpoloadFormOpen">
            <input type="file" ng-model="file" name="file" base-sixty-four-input required onload="onLoad" maxsize="500" accept="image/*">
-        </div>
+        </div>-->
+
+
       </form>
 
+      <!-- isPlaceFormOpen -->
       <div ng-init="isPlaceFormOpen = false" ng-show="isPlaceFormOpen" class="formPadding">
         <section>       
           <label for="exampleInputLink">Lägg till plats</label> 

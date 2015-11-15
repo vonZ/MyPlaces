@@ -20,15 +20,8 @@ module.exports = function(grunt) {
             './bower_components/angular-route/angular-route.js',
             './bower_components/jquery/dist/jquery.js',
             './bower_components/angular-animate/angular-animate.js',
-            './bower_components/angular-bootstrap/ui-bootstrap.js',
-            './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-            './vendor/ui-bootstrap-tpls-0.14.3.min.js',
-            './vendor/ui-bootstrap-tpls-0.13.3.min.js',
             './bower_components/sass-bootstrap/dist/js/bootstrap.js',
             './bower_components/angular-base64-upload/dist/angular-base64-upload.js'
-            // './bower_components/ng-flow/dist/ng-flow-standalone.js',
-            // './bower_components/flow.js/dist/flow.js',
-            // './bower_components/ng-flow/dist/ng-flow.js'
           ],
           dest: './assets/dist/dependencies.min.js'
         }

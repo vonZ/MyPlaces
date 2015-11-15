@@ -51,6 +51,13 @@
     float: right; 
 }
 
+input {
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 15px;
+    width: 100%; 
+}
+
 .twoButton {
 
     &:first-child {

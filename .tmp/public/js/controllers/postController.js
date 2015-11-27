@@ -110,7 +110,7 @@ app.controller('postCtrl', ['$scope', 'posts', 'Map', '$timeout', '$location' , 
 	};
 
 	$scope.getPosts();
-
+	
 	//******* addPost *******//
 	$scope.addPost = function() {
 		$scope.loading = true;
@@ -154,9 +154,7 @@ app.controller('postCtrl', ['$scope', 'posts', 'Map', '$timeout', '$location' , 
 		$scope.category = [0];    
 		$scope.tags = ''; 
 		$scope.searchPlace = null; 
-
 		$scope.loading = false;
-		
 	}; 
 
 	$scope.incrementUpvotes = function(post) {
@@ -164,10 +162,9 @@ app.controller('postCtrl', ['$scope', 'posts', 'Map', '$timeout', '$location' , 
 		posts.upvote(post);
 	};
 
+	//******* deletePost *******//
 	$scope.deletePost = function(post) {
-
 		console.log("postId ", $scope.posts.indexOf(post));
-
         //Remove from DB
 		// posts.deleteItem(post);
 
@@ -177,6 +174,7 @@ app.controller('postCtrl', ['$scope', 'posts', 'Map', '$timeout', '$location' , 
 			var index = $scope.posts.indexOf(post);
 	        $scope.posts.splice(index, 1);
 		}
+
 		function error(){
 			console.log("DELETE ERROR");
 		}

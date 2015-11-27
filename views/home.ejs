@@ -45,13 +45,6 @@
             Lägg till plats
           </span>
         </div>
-
-        <!-- isUpoloadFormOpen -->
-        <!--<div ng-init="isUpoloadFormOpen = false" ng-show="isUpoloadFormOpen">
-           <input type="file" ng-model="file" name="file" base-sixty-four-input required onload="onLoad" maxsize="500" accept="image/*">
-        </div>-->
-
-
       </form>
 
       <!-- isPlaceFormOpen -->
@@ -65,7 +58,7 @@
             </div>
             <div class="input-group">
                 <input name="place" type="text" class="form-control" 
-                ng-model="searchPlace" placeholder="Sök plats" typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control" required />
+                ng-model="searchPlace" placeholder="Sök plats" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control" required />
                 <span class="input-group-btn">
                     <button class="btn btn-primary" 
                     ng-disabled="searchForm.$invalid">Sök</button>
@@ -122,15 +115,28 @@
 
   <div ng-class="{hidden:!show}">
 
-    <div class="inside" id="Loading">
-      <loading></loading>
-    </div>
-
     <section class="col-md-12">
 
+      <form ng-submit="getPosts()">
+        <input type="text" ng-model="selected" uib-typeahead="post.title for post in posts | filter:$viewValue | limitTo:8" placeholder="Sök platser">
+      </form>
+
+      <!--<span ng-click="isSearchFormOpen = !isSearchFormOpen" class="pointer noPadding" >
+          <i class="fa fa-search fa-2x"></i>
+          Sök bland platser
+      </span>-->
+
+      <!--<div ng-init="isSearchFormOpen = false" ng-show="isSearchFormOpen">
+          <input type="text" ng-model="selected" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+      </div>-->
+      <section>
+        <div class="inside" id="Loading">
+          <loading></loading>
+        </div>
+      </section>
       <section class="postSection">
 
-        <div ng-repeat="post in posts | orderBy: '-id'" class="postContainer">
+        <div ng-repeat="post in posts | orderBy: '-id' | filter:selected" class="postContainer">
 
           <div class="{{post.category}} post col-md-12">
 

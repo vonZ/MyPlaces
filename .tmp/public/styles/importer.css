@@ -5872,6 +5872,12 @@ button.close {
 .right {
   float: right; }
 
+input {
+  border-radius: 0px;
+  box-shadow: none;
+  padding: 15px;
+  width: 100%; }
+
 .twoButton:first-child {
   padding-left: 0px; }
 .twoButton:last-child {
@@ -5894,9 +5900,14 @@ body {
 
 .ddl {
   margin: 0;
-  /*-webkit-appearance: none;*/
   padding: 7px;
-  width: 100%; }
+  width: 100%;
+  -webkit-appearance: none;
+  cursor: pointer;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: gainsboro url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat 95% center; }
 
 .dropup {
   float: right; }
@@ -5940,8 +5951,7 @@ body {
       position: absolute;
       z-index: -1; }
     .boxItem form label {
-      font-weight: normal;
-      padding-bottom: 12px; }
+      font-weight: normal; }
 
 .angular-google-map-container {
   height: 400px; }
@@ -6248,9 +6258,14 @@ body {
 
 .ddl {
   margin: 0;
-  /*-webkit-appearance: none;*/
   padding: 7px;
-  width: 100%; }
+  width: 100%;
+  -webkit-appearance: none;
+  cursor: pointer;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: gainsboro url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat 95% center; }
 
 .dropup {
   float: right; }
@@ -6294,8 +6309,7 @@ body {
       position: absolute;
       z-index: -1; }
     .boxItem form label {
-      font-weight: normal;
-      padding-bottom: 12px; }
+      font-weight: normal; }
 
 .angular-google-map-container {
   height: 400px; }

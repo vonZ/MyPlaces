@@ -1,4 +1,4 @@
-var app = angular.module("myApp", [ "ngRoute", "ngAnimate", "naif.base64" ]);
+var app = angular.module("myApp", [ "ngRoute", "ngAnimate", "ui.bootstrap", "naif.base64" ]);
 
 app.controller("postCtrl", [ "$scope", "posts", "Map", "$timeout", "$location", "$http", "$q", "$window", "$rootScope", function(a, b, c, d, e, f, g, h, i) {
     a.tags = [];
